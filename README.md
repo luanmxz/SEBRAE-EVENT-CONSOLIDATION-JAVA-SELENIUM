@@ -1,7 +1,3 @@
-
-Here's a README.md for the project:
-
-```markdown
 # SEBRAE-CONSOLIDA-EE
 
 A Java application designed to automate event consolidation processes using Selenium WebDriver.
@@ -82,6 +78,3 @@ The application includes comprehensive error handling:
 ## License
 
 This project is proprietary and confidential.
-```
-
-This README provides a comprehensive overview of the project structure, setup instructions, and key features while maintaining the organization's specific patterns and naming conventions. It includes all necessary information for developers to understand and work with the project.
