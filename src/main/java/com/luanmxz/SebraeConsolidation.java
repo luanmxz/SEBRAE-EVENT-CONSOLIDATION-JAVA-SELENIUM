@@ -8,7 +8,7 @@ public class SebraeConsolidation {
   public static void main(String[] args) {
 
     EventProcessor eventProcessor = new EventProcessor(ApplicationContext.webDriverHandler,
-        ApplicationContext.eventFileHandler);
+        ApplicationContext.eventFileService);
 
     eventProcessor.execute();
   }

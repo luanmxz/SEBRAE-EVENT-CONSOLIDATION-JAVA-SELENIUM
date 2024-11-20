@@ -5,5 +5,5 @@ import com.luanmxz.services.EventFileService;
 
 public class ApplicationContext {
   public static final WebDriverHandler webDriverHandler = new WebDriverHandler();
-  public static final EventFileService eventFileHandler = new EventFileService();
+  public static final EventFileService eventFileService = new EventFileService();
 }

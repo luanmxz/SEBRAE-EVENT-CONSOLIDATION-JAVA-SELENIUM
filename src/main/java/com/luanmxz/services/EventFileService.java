@@ -17,7 +17,7 @@ import com.luanmxz.enums.EventStatusEnum;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
-public class EventFileService{
+public class EventFileService {
   private static final int EVENT_CODE_COLUMN = 0;
   private static final int STATUS_COLUMN = 1;
   private final Dotenv env = Dotenv.load();
@@ -88,6 +88,21 @@ public class EventFileService{
   public synchronized void updateEventStatus(String filePath, String eventCode, Integer rowNum, String status) {
     try (FileInputStream fis = new FileInputStream(filePath);
         Workbook workbook = new XSSFWorkbook(fis)) {
+
+      Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+        try {
+          if (fis != null) {
+            fis.reset();
+            fis.close();
+          }
+
+          if (workbook != null) {
+            workbook.close();
+          }
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }));
 
       Sheet sheet = workbook.getSheetAt(0);
 
